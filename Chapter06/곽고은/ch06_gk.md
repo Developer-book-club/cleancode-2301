@@ -5,11 +5,26 @@
 #### 자료/객체 비대칭
 - 새로운 자료 타입이 필요한 경우: 클래스와 객체 지향 기법이 적합
 - 새로운 함수가 필요한 경우: 절차적인 코드와 자료 구조가 적합
+```java
+public class Square implements Shape
+{
+    private Point topLeft;
+    private double side;
+    
+    public double area()
+    {
+        return side * side;
+    }
+}
+```
 #### 디미터 법칙
 - 모듈은 자신이 조작하는 객체의 속사정을 몰라야 한다는 법칙
 - 객체는 자료를 숨기고 함수를 공개한다. 즉, 객체는 조회 함수로 내부 구조를 공개하면 안 된다는 의미다.
 ##### __ 기차 충돌
 - 일반적으로 조잡하다 여겨지는 방식이므로 피하는 것이 좋다.
+```java
+final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
+```
 ##### __ 잡종 구조
 - 절반은 객체, 절반은 자료 구조인 형태로 피하는 것이 좋다.
 ##### __ 구조체 감추기
