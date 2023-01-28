@@ -3,9 +3,59 @@
 #### 오류 코드보다 예외를 사용하라
 - 오류가 발생하면 예외를 던지는 게 낫다.
 - 비즈니스 로직과 오류 처리하는 알고리즘이 분리된다.
+```java
+public class DeviceController()
+{  
+    public void sendShutDown()
+    {
+        try
+        {
+            tryToShutDown();
+        }
+        catch(DeviceShutDownError e)
+        {
+            logger.log(e);
+        }
+    }
+    
+    private void tryToShutDown() throws DeviceShutDownError
+    {
+        DeviceHandle handle = getHandle(DEV1);
+        DeviceRecord record = retrieveDeviceRecord(handle);
+        
+        pauseDevice(handle);
+        clearDeviceWorkQueue(handle);
+        closeDevice(handle);
+    }
+    
+    private DeviecHandle getHandle(DeviceID id)
+    {
+        throw new DeviceShutDownError("Invalid handle for: " +  id.toString());
+    }
+}
+```
 #### Try-Catch-Finally 문부터 작성하라
 - 예외가 발생할 코드를 짤 때는 try-catch-finally 문으로 시작하는 편이 낫다.
 - catch 블록에서 예외 유형을 좁히자.
+```java
+try
+{
+
+}
+catch(Exception e)
+{
+
+}
+
+try
+{
+
+}
+catch(FileNotFoundException e)
+{
+
+}
+```
 - try-catch 구조로 범위를 정의한 후 TDD를 사용해 필요한 나머지 논리를 추가한다.
 #### 미확인unchecked 예외를 사용하라
 - 하위 단계에서 코드를 변경하면 상위 단계 메서드 선언부를 전부 고쳐야 한다. </br>
@@ -21,6 +71,34 @@
 - 외부 API를 사용할 때는 Wrapper Class가 최선이다. 외부 API를 감싸면 외부 라이브러리와 프로그램 사이에서 의존성이 크게 줄어든다. 나중에 다른 라이브러리로 갈아타도 비용이 적다.
 - Wrapper Class에서 외부 API를 호출하는 대신 테스트 코드를 넣어주는 방법으로 프로그램을 테스트하기도 쉬워진다.
 - Wrapper Class를 사용하면 특정 업체가 API를 설계한 방식에 발목 잡히지 않는다. 프로그램이 사용하기 편리한 API를 정의하면 그만이다.
+```java
+// LocalPort 클래스는 ACMEPort 클래스가 던지는 예외를 잡아 변환하는 Wrapper Class
+public class LocalPort
+{
+    private ACMEPort innerPort;
+    
+    public LocalPort(int portNumber)
+    {
+        innerPort = new ACMEPort(portNumber);
+    }
+    
+    public void open()
+    {
+        try
+        {
+            innerPort.open();
+        }
+        catch(DeviceResponseException e)
+        {
+            throw new PortDeviceFailure(e);
+        }
+        catch(ATMUnlockedException e)
+        {
+            throw new PortDeviceFailure(e);
+        }
+    }
+}
+```
 #### 정상 흐름을 정의하라
 - 특수 사례 패턴(Special Case Pattern): 클래스를 만들거나 객체를 조작해 특수 사례를 처리하는 방식.
 - 클래스나 객체가 예외적인 상황을 캡슐화해서 처리하므로 클라이언트 코드가 예외적인 상황을 처리할 필요가 없어진다.
