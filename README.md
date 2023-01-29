@@ -37,7 +37,7 @@
 | 0주차 |   01.10 (화) 21:00    |      |      ✅       | 고은, 동훈
 | 1주차 | 01.15(일) 11:00 |   1, 2, 3, 4장   | ✅ |고은, 동훈
 | 2주차 | 01.29(일) 11:00 |   5, 6, 7, 8장   | ✅ | 고은, 동훈
-| 3주차 | 02.05(일)  |     |  |
+| 3주차 | 02.05(일) 11:00 |     |  |
 | 4주차 | 02.12(일) |      |  |
 | 5주차 | 02.19(일) |      |  |
 | 6주차 | 02.26(일) |      |  |
@@ -56,23 +56,23 @@
 ### Commit Convention
 
 - 커밋메시지는 아래와 같은 형식으로 작성
-  - 새로운 내용 추가
+  - 새로운 내용 추가<br>
     ✏️ Create. {설명}
-  - 기존 내용을 업데이트한 경우
+  - 기존 내용을 업데이트한 경우<br>
     💡 Update. {설명}
-  - 오타 혹은 문장을 수정한 경우
+  - 오타 혹은 문장을 수정한 경우<br>
     🔨 Fix. {설명}
-  - 메인 Readme 수정하는 경우
+  - 메인 Readme 수정하는 경우<br>
     📄 Docs. {설명}
-  - 문서 스타일 및 포맷팅, 네이밍 변경
+  - 문서 스타일 및 포맷팅, 네이밍 변경<br>
     🎨 Style. {설명}
-  - 삭제한 경우
+  - 삭제한 경우<br>
     🔥 Del. {설명}
-  - 되돌린 경우
+  - 되돌린 경우<br>
     ⏪ Rev. {설명}
-  - 머지한 경우
+  - 머지한 경우<br>
     🔀 Merge. {From브랜치명} into Main, {설명}
-  - 개선해야하나 일단 커밋한 경우
+  - 개선해야하나 일단 커밋한 경우<br>
     💩 Bad. {설명}
 - 그외 case는 추후 추가될 수 있습니다.
 
@@ -87,4 +87,4 @@
 
 <img align="left" width="40" height="40" src="https://velog.velcdn.com/images/odh0112/post/df05ef7d-ffd9-417b-be70-01aec67431dc/image.png">
 
-[Donghun-Oh](https://github.com/oddong) <br> - Backend Developer
+[Donghun-Oh](https://github.com/o-ddong) <br> - Backend Developer
