@@ -82,7 +82,7 @@
 
 <img align="left" width="40" height="40" src="https://velog.velcdn.com/images/odh0112/post/df05ef7d-ffd9-417b-be70-01aec67431dc/image.png">
 
-[Goeun-Kim](https://github.com/goeunk) <br> - Win App Developer
+[Goeun-Kwak](https://github.com/goeunk) <br> - Win App Developer
 
 
 <img align="left" width="40" height="40" src="https://velog.velcdn.com/images/odh0112/post/df05ef7d-ffd9-417b-be70-01aec67431dc/image.png">
